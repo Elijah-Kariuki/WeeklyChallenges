@@ -18,7 +18,7 @@ namespace ChallengesWithTestsMark8
 
         public bool IsNumberEven(int number)
         {
-            return number % 2 == 0 ? true: false;
+            return number % 2 == 0 ? true : false;
         }
 
         public bool IsNumberOdd(int num)
@@ -43,17 +43,48 @@ namespace ChallengesWithTestsMark8
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return 0;
+            }
+            var evenSum = 0;
+            foreach (var item in numbers)
+            {
+                if (item % 2 == 0)
+                {
+                    evenSum += item;
+                }
+
+            }
+            return evenSum;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return false;
+            }
+            return numbers.Sum() % 2 == 0 ? true : false;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            var count = 0;
+            do
+            {
+                for (var i = number; i > 0; i--)
+                {
+                    if (i % 2 != 0)
+                    {
+                        Console.WriteLine(i);
+                        count++;
+                    }
+                }
+            } while (number <= 0);
+            return count;
         }
     }
 }
+
+
