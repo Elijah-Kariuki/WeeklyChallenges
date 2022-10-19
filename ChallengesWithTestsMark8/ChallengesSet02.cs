@@ -28,16 +28,21 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            return numbers.Count() != 0 || numbers == null ? 0 : numbers.Min() + numbers.Max();
+            return numbers == null|| numbers.Count() == 0 ? 0 : numbers.Min() + numbers.Max(); 
+            
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            return str1.Length > str2.Length ? str1.Length : str2.Length;
+            return str1.Length > str2.Length ? str2.Length : str1.Length;
         }
 
         public int Sum(int[] numbers)
         {
+            if(numbers == null)
+            {
+                return 0;
+            }
             return numbers.Sum();
         }
 
@@ -65,23 +70,23 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
-            return numbers.Sum() % 2 == 0 ? true : false;
+            return numbers.Sum() % 2 != 0 ? true : false;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            var count = 0;
-            do
-            {
-                for (var i = number; i > 0; i--)
+            long count = 0;
+            //if (number ==1 || number <=0)
+            //{ return 0; }
+            
+            for (long i = number -1; i >= 0; i--)
                 {
                     if (i % 2 != 0)
                     {
-                        Console.WriteLine(i);
-                        count++;
+                        count ++;
                     }
                 }
-            } while (number <= 0);
+
             return count;
         }
     }
