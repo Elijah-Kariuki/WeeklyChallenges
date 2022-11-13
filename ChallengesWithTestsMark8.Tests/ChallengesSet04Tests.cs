@@ -61,7 +61,7 @@ namespace ChallengesWithTestsMark8.Tests
             ChallengesSet04 challenger = new ChallengesSet04();
 
             // Act
-            int actual = challenger.GetSmallestNumber(num1, num2, num3, num4);
+            int actual = challenger.SmallestNumber(num1, num2, num3, num4);
 
             // Assert
             Assert.Equal(expected, actual);

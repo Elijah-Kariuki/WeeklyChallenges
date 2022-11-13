@@ -18,7 +18,7 @@ namespace ChallengesWithTestsMark8
             return list.Min();
         }
 
-        public int GetSmallestNumber(int number1, int number2, int number3, int number4)
+        public int SmallestNumber(int number1, int number2, int number3, int number4)
         {
             var list = new List<int>() { number1, number2, number3, number4 };
             return list.Min();
@@ -48,8 +48,13 @@ namespace ChallengesWithTestsMark8
         
         public double AverageEvens(int[] numbers)
         {
+            if(numbers == null || numbers.Length == 0)
+                return 0;
+            var n = numbers.Where(x => x % 2 == 0);
+            return n.Average();
             //Something is wrong with the test
-            return numbers.Where(x => x % 2 == 0).Count() == 0 ? 0 : numbers.Where(x => x % 2 == 0).Average();
+            //return numbers.Where(x => x % 2 == 0).DefaultIfEmpty().Average();
+               // return numbers.Length == 0 || numbers == null ? 0 : numbers.Where(x => x % 2 == 0).Average();
         }
 
         public int Factorial(int number)
